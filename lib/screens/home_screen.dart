@@ -91,27 +91,35 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (int value) {
+          setState(() {
+            _currentTab = value;
+          });
+        },
         currentIndex: _currentTab,
         items: [
           BottomNavigationBarItem(
             icon: Icon(
               FontAwesomeIcons.home,
-              size: 10.0,
+              size: 25.0,
             ),
             title: SizedBox.shrink(),
           ),
           BottomNavigationBarItem(
             icon: Icon(
               FontAwesomeIcons.pizzaSlice,
-              size: 10.0,
+              size: 25.0,
             ),
             title: SizedBox.shrink(),
           ),
           BottomNavigationBarItem(
             icon: CircleAvatar(
-              radius: 10.0,
-              backgroundImage: NetworkImage('https://ibb.co/MkHsMRc'),
+              backgroundImage: NetworkImage(
+                'https://i.ibb.co/gDWVX1g/photo.jpg',
+              ),
+              radius: 20,
             ),
+            title: SizedBox.shrink(),
           ),
         ],
       ),
